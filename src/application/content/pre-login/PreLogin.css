@@ -1,0 +1,67 @@
+.App-pre-login {
+  display: flex;
+  justify-content: center;
+}
+
+.register-login {
+  width: 100%;
+  max-width: 576px;
+  box-shadow: 0px 0px 8px 0px rgba(105, 68, 68, 0.16);
+  border-radius: 4px;
+  padding: 32px;
+}
+
+.register-login .input {
+    width: 100%;
+    border: 0;
+    color: rgba(0,0,0,.87);
+    border-bottom: 1px solid rgba(34,36,38,.15);
+    padding: 8px;
+}
+
+.register-login .input-container {
+    position: relative;
+    margin-top: 64px;
+}
+
+.register-login .input-container label {
+    color: rgba(34,36,38,.15);
+    position: absolute;
+    font-size: 22px;
+    top: 0px;
+    left: 8px;
+    transition: left .5s, top .5s, font-size .5s;
+}
+
+.register-login .input {
+    font-size: 18px;
+    color: blue;
+}
+
+.register-login .input:focus {
+    outline: none;
+}
+
+.register-login input:focus + label, .register-login input:valid + label, .register-login label.valid {
+    font-size: 14px;
+    top: -32px;
+    font-weight: bold;
+}
+
+.register-login .ui.button {
+    margin-top: 64px;
+    width: 100%;
+    background-color: blue !important;
+}
+
+.register-login .ui.button:focus, .ui.button:active {
+    background-color: #3636ff !important;
+}
+
+.error-message {
+    margin-top: 32px;
+}
+
+.red {
+    color: red;
+}
