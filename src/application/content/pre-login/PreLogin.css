@@ -36,6 +36,9 @@
 .register-login .input {
     font-size: 18px;
     color: blue;
+    position: relative;
+    z-index: 1;
+    background: transparent;
 }
 
 .register-login .input:focus {
