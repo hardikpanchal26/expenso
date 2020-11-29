@@ -31,10 +31,10 @@ const Home = ({ auth, categories }) => {
   };
 
   useEffect(() => {
-    fetchExpenses(auth, monthly).then((response) => {
+    fetchExpenses(auth, monthly()).then((response) => {
       setMonthlyExpenses(response.data.reduce(getSum, 0));
     });
-    fetchExpenses(auth, yearly).then((response) => {
+    fetchExpenses(auth, yearly()).then((response) => {
       setYearlyExpenses(response.data.reduce(getSum, 0));
     });
   }, [auth]);
