@@ -22,8 +22,6 @@ const PreLogin = ({ auth, setAuth, user, setUser, route, setRoute }) => {
       error: null,
     },
   });
-  const [loginLoading, setLoginLoading] = useState(false);
-  const [registerLoading, setRegisterLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleInputBlur = (e) => {
@@ -40,13 +38,6 @@ const PreLogin = ({ auth, setAuth, user, setUser, route, setRoute }) => {
     const newFormData = { ...formData };
     newFormData[target.name].value = target.value;
     setFormData(newFormData);
-  };
-
-  const validateData = (data) => {
-    if (formData.email.length === 0 || formData.password.length === 0)
-      return false;
-    if (route === "register" && formData.user_name.length === 0) return false;
-    return true;
   };
 
   const loginSubmit = () => {
@@ -165,7 +156,6 @@ const PreLogin = ({ auth, setAuth, user, setUser, route, setRoute }) => {
           {route === "register" ? (
             <Button
               primary
-              loading={loginLoading}
               onClick={(e) => {
                 e.preventDefault();
                 registerSubmit();
@@ -176,7 +166,6 @@ const PreLogin = ({ auth, setAuth, user, setUser, route, setRoute }) => {
           ) : (
             <Button
               primary
-              loading={loginLoading}
               onClick={(e) => {
                 e.preventDefault();
                 loginSubmit();
