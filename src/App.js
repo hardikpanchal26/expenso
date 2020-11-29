@@ -13,18 +13,20 @@ const App = () => {
     email: "",
   });
   const [auth, setAuth] = useState(null);
-  if (!auth && cookies.get("auth")) {
-    setAuth(cookies.get("auth"));
-  }
+
 
   useEffect(() => {
+    if (!auth && cookies.get("auth")) {
+      setAuth(cookies.get("auth"));
+    }
+
+    if (!auth && !["login", "register"].includes(route)) {
+      setRoute("login");
+    }
     if (auth && !["home", "add", "stats"].includes(route)) {
       setRoute("home");
     }
-    if (!auth && !["login", "register", "stats"].includes(route)) {
-      setRoute("login");
-    }
-
+    console.log(auth);
   }, [auth]);
 
   const [route, setRoute] = useState("login");

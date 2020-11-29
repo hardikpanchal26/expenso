@@ -1,0 +1,43 @@
+.stats .heading {
+  margin-top: 48px !important;
+}
+
+.stats .filters-container {
+    text-align: center;
+}
+
+.stats .mb-4 {
+    margin-bottom: 16px;
+}
+
+.stats .mb-2 {
+    margin-bottom: 4px;
+}
+
+.stats .blue-color {
+    font-weight: bold;
+}
+
+.stats select {
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 2px;
+}
+
+.stats select:focus {
+    outline: none;
+}
+
+.react-datepicker-wrapper input {
+    width: 140px;
+    padding: 8px;
+    background-color: #eaeaea;
+    margin: 8px;
+    border: 0;
+}
+
+.date-picker-stat {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

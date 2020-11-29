@@ -14,9 +14,10 @@ const AppHeader = ({ auth, setAuth, route, setRoute }) => (
             <>
               <Button
                 inverted
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault();
                   const cookies = new Cookies();
-                  cookies.remove('auth');
+                  cookies.remove("auth");
                   setAuth(null);
                 }}
               >
@@ -28,11 +29,20 @@ const AppHeader = ({ auth, setAuth, route, setRoute }) => (
               <Button
                 inverted
                 className="mr-8"
-                onClick={() => setRoute("login")}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setRoute("login");
+                }}
               >
                 Log in
               </Button>
-              <Button inverted onClick={() => setRoute("register")}>
+              <Button
+                inverted
+                onClick={(e) => {
+                  e.preventDefault();
+                  setRoute("register");
+                }}
+              >
                 Register
               </Button>
             </>
