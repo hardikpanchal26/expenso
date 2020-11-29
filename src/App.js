@@ -7,7 +7,6 @@ import AppFooter from "./application/footer/AppFooter";
 import Cookies from "universal-cookie";
 
 const App = () => {
-  const cookies = new Cookies();
   const [user, setUser] = useState({
     user_name: "",
     email: "",
@@ -16,6 +15,7 @@ const App = () => {
 
 
   useEffect(() => {
+    const cookies = new Cookies();
     if (!auth && cookies.get("auth")) {
       setAuth(cookies.get("auth"));
     }
