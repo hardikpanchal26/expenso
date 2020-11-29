@@ -12,7 +12,7 @@ const PostLogin = ({ route, auth }) => {
     getCategories(auth).then((response) => {
       setCategories(response.data.categories);
     });
-  }, []);
+  }, [auth]);
 
   switch (route) {
     case "home":
