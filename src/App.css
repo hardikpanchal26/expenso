@@ -1,3 +1,4 @@
 .App {
-  height: clac(100% - 64px);
+  height: calc(100% - 64px);
+  padding-bottom: 112px;
 }

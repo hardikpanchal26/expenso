@@ -21,6 +21,10 @@ const App = () => {
     if (auth && !["home", "add", "stats"].includes(route)) {
       setRoute("home");
     }
+    if (!auth && !["login", "register", "stats"].includes(route)) {
+      setRoute("login");
+    }
+
   }, [auth]);
 
   const [route, setRoute] = useState("login");

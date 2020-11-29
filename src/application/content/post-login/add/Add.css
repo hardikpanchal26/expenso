@@ -1,0 +1,123 @@
+.add-expense .amount-heading {
+  margin-top: 48px !important;
+}
+
+.add-expense .amount {
+  display: flex;
+  align-items: center;
+}
+
+.add-expense .date {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.add-expense .date .date-heading {
+  margin-top: 0 !important;
+  margin-left: 8px;
+}
+
+.add-expense .amount-input {
+  border: 0;
+  width: 100%;
+  border-bottom: 1px solid rgba(34, 36, 38, 0.15);
+  padding: 8px 12px;
+  margin-left: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: blue;
+}
+
+.add-expense input:focus {
+  outline: none;
+}
+
+.add-expense .categories-heading {
+  margin-top: 48px !important;
+}
+
+.add-expense .categories {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.add-expense .categories .category-container {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.add-expense .categories .category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #aea4a6;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.16);
+}
+
+.add-expense .category .text {
+  margin-top: 8px;
+}
+
+.add-expense .categories .category.selected {
+  border: 1px solid blue;
+}
+
+.add-expense .categories .category.selected .icon {
+  color: blue !important;
+}
+.add-expense .categories .category.selected .text {
+  color: blue !important;
+}
+
+.categories .input-category {
+    border: 1px solid #aea4a6;
+    border-radius: 2px;
+    width: calc(100% - 16px);
+    padding: 2px;
+    margin-top: 16px;
+}
+
+.categories .category.add-new {
+    cursor: default;
+}
+.categories .category.add-new .icon {
+    cursor: pointer;
+}
+.categories .category.add-new .icon.disabled {
+    cursor: not-allowed;
+}
+.categories .category.add-new .icon:hover {
+    color: blue !important;
+}
+
+.add-expense .ui.button {
+    margin-top: 64px;
+    width: 100%;
+    background-color: blue !important;
+}
+
+.textarea-input {
+    width: 100%;
+    height: 92px;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.textarea-input:focus {
+    outline: none;
+}
+
+.add-expense .ui.button:focus, .ui.button:active {
+    background-color: #3636ff !important;
+}

@@ -4,7 +4,7 @@ import Cookies from "universal-cookie";
 
 const AppHeader = ({ auth, setAuth, route, setRoute }) => (
   <header className="App-header">
-    <Container fluid className="header-container">
+    <div className="header-container">
       <Container className="header">
         <Header className="App-title" size="large">
           Expenso
@@ -39,7 +39,7 @@ const AppHeader = ({ auth, setAuth, route, setRoute }) => (
           )}
         </div>
       </Container>
-    </Container>
+    </div>
   </header>
 );
 

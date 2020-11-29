@@ -1,30 +1,24 @@
-import React, { useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
 import "./PostLogin.css";
 import Home from "./home/Home";
 import Add from "./add/Add";
 import Stats from "./stats/Stats";
-import {
-  GET_CATEGORIES,
-  GET_EXPENSES,
-  ADD_CATEGORY,
-  ADD_EXPENSE,
-} from "../../common/apis";
+import { getCategories } from "./Operations";
 
 const PostLogin = ({ route, auth }) => {
-  console.log(auth);
-  const config = {
-    headers: { Authorization: auth },
-  };
+  const [categories, setCategories] = useState([]);
+
   useEffect(() => {
-    axios.get(GET_CATEGORIES, config).then((response) => {console.log(response)});
+    getCategories(auth).then((response) => {
+      setCategories(response.data.categories);
+    });
   }, []);
 
   switch (route) {
     case "home":
-      return <Home />;
+      return <Home categories={categories} />;
     case "add":
-      return <Add />;
+      return <Add auth={auth} categories={categories} updateCategories={setCategories} />;
     case "stats":
       return <Stats />;
     default:
