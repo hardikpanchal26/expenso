@@ -17,7 +17,7 @@ const Add = ({ auth, categories, updateCategories }) => {
   useEffect(() => {
     if (formData.category === "")
       setFormData({ ...formData, category: categories[0] });
-  }, [categories]);
+  }, [categories, formData]);
 
   const selectCategory = (value) => {
     setFormData({ ...formData, category: value });

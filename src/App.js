@@ -12,24 +12,24 @@ const App = () => {
     email: "",
   });
   const [auth, setAuth] = useState(null);
-
-
+  const [route, setRoute] = useState("login");
+  
   useEffect(() => {
     const cookies = new Cookies();
     if (!auth && cookies.get("auth")) {
       setAuth(cookies.get("auth"));
     }
 
-    if (!auth && !["login", "register"].includes(route)) {
-      setRoute("login");
+    if (route) {
+      if (!auth && !["login", "register"].includes(route)) {
+        setRoute("login");
+      }
+      if (auth && !["home", "add", "stats"].includes(route)) {
+        setRoute("home");
+      }
     }
-    if (auth && !["home", "add", "stats"].includes(route)) {
-      setRoute("home");
-    }
-    console.log(auth);
-  }, [auth]);
+  }, [auth, route]);
 
-  const [route, setRoute] = useState("login");
   return (
     <Container>
       <div className="App">

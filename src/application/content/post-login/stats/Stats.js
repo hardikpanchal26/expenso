@@ -46,7 +46,7 @@ const Stats = ({ auth, categories }) => {
     fetchExpenses(auth, dates, category).then((response) => {
       setExpenses(response.data);
     });
-  }, [category, dates]);
+  }, [category, dates, auth]);
   return (
     <div className="stats">
       <Header size="large" className="blue-color">
