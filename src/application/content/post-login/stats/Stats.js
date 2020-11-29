@@ -42,14 +42,10 @@ const Stats = ({ auth, categories }) => {
     setDates({ ...dates, end_date: dateFormat(date, "yyyy-mm-dd") });
   };
 
-  const getAllExpenses = () => {
+  useEffect(() => {
     fetchExpenses(auth, dates, category).then((response) => {
       setExpenses(response.data);
     });
-  };
-
-  useEffect(() => {
-    getAllExpenses();
   }, [category, dates]);
   return (
     <div className="stats">
