@@ -37,7 +37,7 @@ const Home = ({ auth, categories }) => {
     fetchExpenses(auth, yearly).then((response) => {
       setYearlyExpenses(response.data.reduce(getSum, 0));
     });
-  }, []);
+  }, [auth]);
 
   return (
     <div className="home">

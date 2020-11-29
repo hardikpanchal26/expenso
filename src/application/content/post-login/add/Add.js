@@ -20,7 +20,6 @@ const Add = ({ auth, categories, updateCategories }) => {
   }, [categories]);
 
   const selectCategory = (value) => {
-    console.log(value);
     setFormData({ ...formData, category: value });
   };
 
