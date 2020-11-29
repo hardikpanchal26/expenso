@@ -16,11 +16,18 @@ const PostLogin = ({ route, auth }) => {
 
   switch (route) {
     case "home":
-      return <Home categories={categories} />;
+      return <Home key={route} auth={auth} categories={categories} />;
     case "add":
-      return <Add auth={auth} categories={categories} updateCategories={setCategories} />;
+      return (
+        <Add
+          key={route}
+          auth={auth}
+          categories={categories}
+          updateCategories={setCategories}
+        />
+      );
     case "stats":
-      return <Stats />;
+      return <Stats key={route} auth={auth} categories={categories} />;
     default:
       return <></>;
   }

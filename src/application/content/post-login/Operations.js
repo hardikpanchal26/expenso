@@ -13,7 +13,7 @@ export const getCategories = (auth, data) => {
   return axios.get(GET_CATEGORIES, config);
 };
 
-export const fetchExpenses = (auth, category = "", data) => {
+export const fetchExpenses = (auth, data, category = "") => {
   const config = {
     headers: { Authorization: auth },
   };
