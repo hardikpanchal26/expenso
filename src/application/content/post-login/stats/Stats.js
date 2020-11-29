@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Stats.css";
-import { Header, Icon, Table, Select } from "semantic-ui-react";
+import { Header, Table } from "semantic-ui-react";
 import dateFormat from "dateformat";
 import { fetchExpenses } from "../Operations";
 import DatePicker from "react-datepicker";
@@ -23,7 +23,7 @@ const Stats = ({ auth, categories }) => {
   const validateStartDate = (date) => {
     const min = new Date(leastDate);
     const end = new Date(endDate);
-    if (date > endDate || date < min) {
+    if (date > end || date < min) {
       alert("Invalid start date");
       return;
     }
@@ -34,7 +34,7 @@ const Stats = ({ auth, categories }) => {
   const validateEndDate = (date) => {
     const max = new Date(maxDate);
     const start = new Date(startDate);
-    if (date < startDate || date > max) {
+    if (date < start || date > max) {
       alert("Invalid end date");
       return;
     }
