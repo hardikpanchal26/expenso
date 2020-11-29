@@ -17,7 +17,7 @@ const Stats = ({ auth, categories }) => {
   const leastDate = "2001-01-01";
   const maxDate = dateFormat(Date(), "yyyy-mm-dd");
 
-  const [startDate, setStartDate] = useState(Date.now());
+  const [startDate, setStartDate] = useState(new Date(dateFormat("2001-01-01")));
   const [endDate, setEndDate] = useState(Date.now());
 
   const validateStartDate = (date) => {
@@ -45,6 +45,7 @@ const Stats = ({ auth, categories }) => {
   useEffect(() => {
     fetchExpenses(auth, dates, category).then((response) => {
       setExpenses(response.data);
+      console.log("Data updated");
     });
   }, [category, dates, auth]);
   return (
@@ -65,7 +66,9 @@ const Stats = ({ auth, categories }) => {
             >
               <option value="">-</option>
               {categories.map((x) => (
-                <option key={x} value={x}>{x}</option>
+                <option key={x} value={x}>
+                  {x}
+                </option>
               ))}
             </select>
           </div>
